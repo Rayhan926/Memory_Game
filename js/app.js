@@ -170,7 +170,7 @@ $(document).ready(function () {
     setTimeout(() => {
       $(".game_tiles_wrap")
         .imagesLoaded()
-        .done(function (instance) {
+        .done(function () {
           $(".game_board_wrap").slideToggle(200);
           $(".loader").removeClass("show");
           countdownTimeStart();
@@ -186,17 +186,19 @@ $(document).ready(function () {
     resetVariables();
     createTiles();
     createPlayer();
+    $(".game_tiles_wrap").append(shuffle(storeAllTiles));
+    $(".player_count_1").addClass("active");
+    $(".game_tiles_parent_wrap").slideDown(100);
     setTimeout(() => {
-      $(".game_tiles_wrap").append(shuffle(storeAllTiles));
-      $(".player_count_1").addClass("active");
-      $(".game_tiles_parent_wrap").slideDown(100);
-      setTimeout(() => {
-        $(".loader").removeClass("show");
-        $(".game_board_wrap").slideDown(200);
-        countdownTimeStart();
-        storeAllTiles = [];
-      }, 400);
-    }, 200);
+      $(".game_tiles_wrap")
+        .imagesLoaded()
+        .done(function () {
+          $(".game_board_wrap").slideDown(200);
+          $(".loader").removeClass("show");
+          countdownTimeStart();
+          storeAllTiles = [];
+        });
+    }, 500);
   }
 
   let interVal;
