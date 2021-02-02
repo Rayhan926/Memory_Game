@@ -182,10 +182,10 @@ $(document).ready(function () {
   function restartGame() {
     $(".game_board_wrap, .game_over_wrap").slideUp(200);
     $(".loader").addClass("show");
+    $(".player_box .player_points, .player_box .player_moves").text("0");
 
     resetVariables();
     createTiles();
-    createPlayer();
     $(".game_tiles_wrap").append(shuffle(storeAllTiles));
     $(".player_count_1").addClass("active");
     $(".game_tiles_parent_wrap").slideDown(100);
