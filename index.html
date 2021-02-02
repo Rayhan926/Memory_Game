@@ -46,11 +46,43 @@
         <div class="game_name_box">
           <h1>Memory Game</h1>
           <div class="loader"></div>
+          <div class="moreOptions_wrap">
+            <div class="game_player_option_select_box dp_dwn_clck">
+              <div class="selected_player_box">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-settings"
+                >
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                  ></path>
+                </svg>
+              </div>
+              <div
+                class="player_select_more_option_box"
+                style="min-width: 165px"
+              >
+                <ul class="option_ul">
+                  <li class="restartBtn">Restart Game</li>
+                  <li class="backBtn">Exit Game</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="game_board_wrap">
           <div class="game_players_time_wrap">
             <div class="game_players_wrap"></div>
-            <div class="game_time_wrap">
+            <!-- <div class="game_time_wrap">
               <div class="game_time_box">
                 <p>Time</p>
                 <p style="margin-top: 4px">
@@ -59,7 +91,7 @@
                   <span class="secondSpan"></span>
                 </p>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="game_tiles_parent_wrap">
             <div class="game_tiles_wrap"></div>
@@ -82,7 +114,7 @@
           <div class="option_box" style="z-index: 9">
             <div class="game_player_option_select_box dp_dwn_clck">
               <div class="selected_player_box">
-                <span data-selected="" class="player_selected_span"
+                <span data-selected="1" class="player_selected_span"
                   >Select Player</span
                 >
                 <div class="dp_icon_box"><i class="fas fa-sort-down"></i></div>
@@ -104,7 +136,7 @@
           <div class="option_box" style="z-index: 6">
             <div class="game_player_option_select_box dp_dwn_clck">
               <div class="selected_player_box">
-                <span data-selected="" class="player_selected_label"
+                <span data-selected="1" class="player_selected_label"
                   >Label</span
                 >
                 <div class="dp_icon_box"><i class="fas fa-sort-down"></i></div>
@@ -121,7 +153,7 @@
           <div class="option_box" style="z-index: 3">
             <div class="game_player_option_select_box dp_dwn_clck">
               <div class="selected_player_box">
-                <span data-selected="" class="player_selected_tiles"
+                <span data-selected="20" class="player_selected_tiles"
                   >Tiles</span
                 >
                 <div class="dp_icon_box"><i class="fas fa-sort-down"></i></div>
@@ -146,7 +178,7 @@
       </div>
     </div>
 
-    </div>
+    <!-- </div> -->
     <script src="./js/jquery331.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="./js/anime.min.js"></script>

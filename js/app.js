@@ -123,10 +123,6 @@ $(document).ready(function () {
     }
   });
 
-  $(document).dblclick(function () {
-    gameOver();
-  });
-
   function countMoves(currentPlyr) {
     let currentMoves = Number(
       $(".player_count_" + currentPlyr + " .player_moves").text()
@@ -173,7 +169,8 @@ $(document).ready(function () {
         .done(function () {
           $(".game_board_wrap").slideToggle(200);
           $(".loader").removeClass("show");
-          countdownTimeStart();
+          $(".moreOptions_wrap").addClass("show");
+          // countdownTimeStart();
         });
     }, 500);
     storeAllTiles = [];
@@ -195,38 +192,39 @@ $(document).ready(function () {
         .done(function () {
           $(".game_board_wrap").slideDown(200);
           $(".loader").removeClass("show");
-          countdownTimeStart();
+          $(".moreOptions_wrap").addClass("show");
+          // countdownTimeStart();
           storeAllTiles = [];
         });
     }, 500);
   }
 
-  let interVal;
-  function countdownTimeStart() {
-    var countDownDate = new Date().getTime();
-    interVal = setInterval(function () {
-      var now = new Date().getTime();
+  // let interVal;
+  // function countdownTimeStart() {
+  //   var countDownDate = new Date().getTime();
+  //   interVal = setInterval(function () {
+  //     var now = new Date().getTime();
 
-      var distance = now - countDownDate;
+  //     var distance = now - countDownDate;
 
-      var hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  //     var hours = Math.floor(
+  //       (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  //     );
+  //     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  //     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      if (hours > 0) $(".hourSpan").text(hours + "h : ");
-      if (minutes > 0) $(".minuteSpan").text(minutes + "m : ");
-      seconds >= 0 ? $(".secondSpan").text(seconds + "s") : null;
-    }, 1000);
-  }
+  //     if (hours > 0) $(".hourSpan").text(hours + "h : ");
+  //     if (minutes > 0) $(".minuteSpan").text(minutes + "m : ");
+  //     seconds >= 0 ? $(".secondSpan").text(seconds + "s") : null;
+  //   }, 1000);
+  // }
 
   function animateTiles(animateElmnts) {
     animateElmnts.forEach(function (elmmt) {
       let elm = ".unique_" + elmmt.attr("data-uniqueid");
 
       $(elm).css({
-        zIndex: "5",
+        zIndex: "99999",
         pointerEvents: "none",
       });
       let pointBoxOffset = $(".player_count_" + currentPlayer).offset();
@@ -237,7 +235,7 @@ $(document).ready(function () {
       let translateX_Is = pointBoxOffset.left - tileOffset.left;
 
       let tl = anime.timeline({
-        duration: 500,
+        duration: 200,
         easing: "linear",
       });
       tl.add({
@@ -252,7 +250,6 @@ $(document).ready(function () {
           translateY: translateY_Is,
           translateX: translateX_Is,
           scale: 0,
-          duration: 500,
         },
         "+=200"
       );
@@ -278,7 +275,7 @@ $(document).ready(function () {
 
   function gameOver() {
     $(".win_title").text("");
-    clearInterval(interVal);
+    // clearInterval(interVal);
     let allPoints = [];
     $(".player_box .player_points").each(function () {
       let eachPoint = Number($(this).text());
