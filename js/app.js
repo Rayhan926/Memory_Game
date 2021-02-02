@@ -71,7 +71,7 @@ $(document).ready(function () {
 
   $(".start_game_btn").click(function () {
     resetVariables();
-    $(".loader").addClass("show");
+
     let errorArr = [];
     uniqueId = 1;
     $("[data-selected]").each(function () {
@@ -84,6 +84,7 @@ $(document).ready(function () {
       }
     });
     if (errorArr.length === 0) {
+      $(".loader").addClass("show");
       gamePlayer = getDataVal(".player_selected_span");
       gameLabel = getDataVal(".player_selected_label");
       gameTiles = getDataVal(".player_selected_tiles");
@@ -167,9 +168,13 @@ $(document).ready(function () {
     $(".game_tiles_wrap").append(shuffle(storeAllTiles));
     $(".player_count_1").addClass("active");
     setTimeout(() => {
-      $(".game_board_wrap").slideToggle(200);
-      $(".loader").removeClass("show");
-      countdownTimeStart();
+      $(".game_tiles_wrap")
+        .imagesLoaded()
+        .done(function (instance) {
+          $(".game_board_wrap").slideToggle(200);
+          $(".loader").removeClass("show");
+          countdownTimeStart();
+        });
     }, 500);
     storeAllTiles = [];
   }
