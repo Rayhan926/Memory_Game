@@ -756,11 +756,9 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 9;
-  // right: 0;
-  // opacity: 0;
-  // pointer-events: none;
-
-  right: 18px;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
 
   svg {
     stroke: #fff;
@@ -781,6 +779,7 @@ body {
     }
   }
   &.show {
+    transition: 0.3s 0.3s ease;
     opacity: 1;
     pointer-events: all;
     right: 18px;

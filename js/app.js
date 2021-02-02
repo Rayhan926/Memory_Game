@@ -132,6 +132,7 @@ $(document).ready(function () {
   }
 
   $(".backBtn").click(function () {
+    $(".moreOptions_wrap").removeClass("show");
     $(".game_options_box, .game_start_box, .game_tiles_parent_wrap").slideDown(
       200
     );
@@ -179,6 +180,7 @@ $(document).ready(function () {
   function restartGame() {
     $(".game_board_wrap, .game_over_wrap").slideUp(200);
     $(".loader").addClass("show");
+    $(".moreOptions_wrap").removeClass("show");
     $(".player_box .player_points, .player_box .player_moves").text("0");
 
     resetVariables();
