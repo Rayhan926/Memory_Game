@@ -990,6 +990,10 @@ body {
   .game_board_wrap .game_tiles_parent_wrap .game_tile_box {
     width: 9%;
   }
+  .game_board_wrap .game_players_time_wrap {
+    -ms-grid-columns: 80% 20%;
+        grid-template-columns: 80% 20%;
+  }
 }
 
 @media (max-width: 530px) {
@@ -1019,6 +1023,16 @@ body {
   }
   .game_parent_wrap.start .game_name_box h1 {
     font-size: 15px !important;
+  }
+  .game_board_wrap .game_players_time_wrap {
+    -ms-grid-columns: 70% 30%;
+        grid-template-columns: 70% 30%;
+  }
+}
+
+@media (max-width: 400px) {
+  .game_board_wrap .game_tiles_parent_wrap .game_tile_box {
+    width: 12%;
   }
 }
 /*# sourceMappingURL=style.css.map */
