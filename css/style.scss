@@ -558,7 +558,6 @@ body {
       align-items: flex-start;
       flex-wrap: wrap;
       line-height: 0;
-      gap: 5px;
       padding: 10px 2px;
 
       &::before {
@@ -568,6 +567,8 @@ body {
 
     .game_tile_box {
       width: 8%;
+      margin-right: 3px;
+      margin-bottom: 3px;
       line-height: 0;
       cursor: pointer;
       position: relative;
@@ -667,6 +668,7 @@ body {
     @include flex();
     flex-direction: column;
     padding: 15px 10px;
+    text-align: center;
 
     h3,
     h5 {
@@ -808,6 +810,9 @@ body {
   // }
 }
 @media (max-width: 530px) {
+  .game_over_wrap .game_over_inner_box h5 {
+    font-size: 20px;
+  }
   .game_board_wrap .game_tiles_parent_wrap .game_tile_box {
     width: 10%;
   }

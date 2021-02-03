@@ -672,7 +672,6 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   line-height: 0;
-  gap: 5px;
   padding: 10px 2px;
 }
 
@@ -682,6 +681,8 @@ body {
 
 .game_board_wrap .game_tiles_parent_wrap .game_tile_box {
   width: 8%;
+  margin-right: 3px;
+  margin-bottom: 3px;
   line-height: 0;
   cursor: pointer;
   position: relative;
@@ -850,6 +851,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 15px 10px;
+  text-align: center;
 }
 
 .game_over_wrap .game_over_inner_box h3,
@@ -1023,6 +1025,9 @@ body {
 }
 
 @media (max-width: 530px) {
+  .game_over_wrap .game_over_inner_box h5 {
+    font-size: 20px;
+  }
   .game_board_wrap .game_tiles_parent_wrap .game_tile_box {
     width: 10%;
   }
