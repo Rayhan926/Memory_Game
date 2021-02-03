@@ -258,6 +258,8 @@ body {
   width: 550px;
   @extend .default_box_look;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .game_front_wrap {
