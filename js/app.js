@@ -91,8 +91,28 @@ $(document).ready(function () {
       createPlayer();
       createTiles();
       startGame();
+      showTooltip();
     }
   });
+
+  function showTooltip() {
+    setTimeout(() => {
+      let pointBox = $(".player_count_1");
+      let pointBoxOffset = pointBox.offset();
+      let fromTop = pointBoxOffset.top + pointBox.height() + 20;
+      let fromLeft = pointBoxOffset.left + 22;
+
+      $(".change_name_tooltip_box")
+        .css({
+          top: fromTop + "px",
+          left: fromLeft + "px",
+        })
+        .addClass("show");
+      setTimeout(() => {
+        $(".change_name_tooltip_box").removeClass("show");
+      }, 2000);
+    }, 2000);
+  }
 
   let prevTile = "";
   $(document).on("click", ".game_tile_box", function () {
@@ -197,6 +217,7 @@ $(document).ready(function () {
           $(".game_board_wrap").slideDown(200);
           $(".loader").removeClass("show");
           $(".moreOptions_wrap").addClass("show");
+          showTooltip();
           // countdownTimeStart();
           storeAllTiles = [];
         });

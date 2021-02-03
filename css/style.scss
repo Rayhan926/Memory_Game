@@ -111,6 +111,46 @@ body {
   //   z-index: 4;
   // }
 }
+.change_name_tooltip_box {
+  position: absolute;
+  max-width: 120px;
+  font-family: $Play;
+  font-size: 11px;
+  color: #fff;
+  @extend .default_box_look;
+  border-radius: 3px;
+  border-width: 1px;
+  padding: 4px 6px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+  transition: 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    border-left: 10px solid transparent;
+    border-top: 10px solid #e39056;
+    transform: rotate(-45deg);
+  }
+
+  &.show {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    animation: fromTop 0.3s ease !important;
+  }
+}
+
+@keyframes fromTop {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 .squere {
   width: 200px;
