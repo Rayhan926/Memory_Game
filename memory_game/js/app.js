@@ -91,7 +91,6 @@ $(document).ready(function () {
       createPlayer();
       createTiles();
       startGame();
-      showTooltip();
     }
   });
 
@@ -193,6 +192,7 @@ $(document).ready(function () {
           $(".game_board_wrap").slideToggle(200);
           $(".loader").removeClass("show");
           $(".moreOptions_wrap").addClass("show");
+          showTooltip();
           // countdownTimeStart();
         });
     }, 500);
