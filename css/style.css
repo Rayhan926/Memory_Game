@@ -736,6 +736,13 @@ body {
   border-radius: 3px 3px 0 0;
 }
 
+.game_board_wrap .game_tiles_parent_wrap .game_tile_box.opened_tile {
+  -webkit-animation: scaleUpOnce 0.2s ease-in-out;
+          animation: scaleUpOnce 0.2s ease-in-out;
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+
 .game_board_wrap .game_tiles_parent_wrap .game_tile_box.opened_tile .game_tile_img_box {
   -webkit-transform: perspective(80px) rotateY(0deg) !important;
           transform: perspective(80px) rotateY(0deg) !important;

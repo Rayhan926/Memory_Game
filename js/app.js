@@ -107,8 +107,10 @@ $(document).ready(function () {
 
       if (openedCount >= 2) {
         if (opened1 === opened2 && opened1 !== "" && opened2 !== "") {
-          animateTiles([$(this), prevTile]);
           tilesMatched();
+          setTimeout(() => {
+            animateTiles([$(this), prevTile]);
+          }, 400);
         } else {
           changePlayer();
           setTimeout(() => {

@@ -606,8 +606,8 @@ body {
         }
       }
       &.opened_tile {
-        // animation: scaleUpOnce 0.2s ease-in-out;
-        // animation-delay: 0.15s;
+        animation: scaleUpOnce 0.2s ease-in-out;
+        animation-delay: 0.15s;
         .game_tile_img_box {
           transform: perspective(80px) rotateY(0deg) !important;
         }
